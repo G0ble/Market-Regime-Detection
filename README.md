@@ -81,11 +81,6 @@ only Leak 1.
 In 1D, optimal transport has a closed form: sort both samples, pair the quantiles, average the
 p-th powers of the gaps. The barycenter likewise — the average of the quantile functions.
 
-> Published implementations commonly compute the Wasserstein distance matrix, project it to 2D
-> via MDS, then run **euclidean** k-means on the embedding. That is not the paper's algorithm:
-> the MDS projection distorts the geometry, and the clustering then operates on the distorted
-> space. This repo implements WK-means properly — Wasserstein distance for assignment,
-> Wasserstein barycenter for the centroid update.
 
 **A finding worth flagging.** Normalising each window by its own standard deviation — stripping
 magnitude and leaving only *shape*, supposedly the non-parametric advantage — collapses the
